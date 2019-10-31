@@ -1,0 +1,16 @@
+package com.cjean.springboot.demo_nginx;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DemoNginxApplicationTests {
+
+    @Test
+    public void contextLoads() {
+    }
+
+}

@@ -1,0 +1,11 @@
+server:
+  port: 8101 #\u914D\u7F6E\u8FD0\u884C\u7684\u7AEF\u53E3
+spring:
+  application:
+    name: eureka-client #\u914D\u7F6E\u670D\u52A1\u540D\u79F0
+eureka:
+  client:
+    register-with-eureka: true #\u6CE8\u518C\u5230 eureka\u6CE8\u518C\u4E2D\u5FC3
+    fetch-registry: true #\u83B7\u53D6\u6CE8\u518C\u5B9E\u4F8B\u5217\u8868
+    service-url:
+      defaultZone: http://localhost:8001/eureka/ #\u914D\u7F6E\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740
