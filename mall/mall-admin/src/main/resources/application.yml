@@ -32,3 +32,5 @@ logging:
     com.macro.mall: debug
 #  file: demo_log.log #配置日志生成路径
 #  path: /var/logs #配置日志文件名称
+server:
+  port: 8080
