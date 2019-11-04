@@ -1,13 +1,19 @@
 package com.cjean.daliytest.ÈÝÆ÷;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class TestCollection {
 
 	public static void main(String[] args) {
+		
+		new HashMap<>();
+//		final ConcurrentHashMap<K, V> kvConcurrentHashMap = new ConcurrentHashMap<K, V>();
+
 		List<String> s1 = new ArrayList<String>();
 		s1.add("1111");
 		s1.add("2222");
