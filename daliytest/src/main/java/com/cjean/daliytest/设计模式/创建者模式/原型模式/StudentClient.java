@@ -2,8 +2,9 @@ package com.cjean.daliytest.设计模式.创建者模式.原型模式;
 
 import java.util.Date;
 
-public class Client {
+public class StudentClient {
 	public static void main(String[] args) throws Exception {
+
 		Date date = new Date(12312345678L);
 		Student student1 = new Student(1,"小米",date);
 		System.out.println(student1.toString());//Student [id=1, name=小米]
