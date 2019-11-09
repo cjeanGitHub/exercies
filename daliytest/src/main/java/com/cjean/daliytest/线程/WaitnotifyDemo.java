@@ -13,7 +13,7 @@ public class WaitnotifyDemo {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i=0;i<10;i++){
+                for (int i = 0; i < 10; i++) {
                     sweethearts.boy(i);
                 }
             }
@@ -21,14 +21,12 @@ public class WaitnotifyDemo {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                for (int i=0;i<10;i++){
+                for (int i = 0; i < 10; i++) {
                     sweethearts.gitl(i);
                 }
             }
         }).start();
     }
-
-
 }
 
 class Sweethearts {
@@ -37,7 +35,7 @@ class Sweethearts {
     synchronized void boy(int i) {
 
         //如果女孩没搭讪 不说话  就等着
-        while (!f){
+        while (!f) {
             try {
                 System.out.println("======等待女孩搭讪========");
                 this.wait();
@@ -48,14 +46,13 @@ class Sweethearts {
         }
         //女孩搭讪了  回答
         System.out.println("======你好镁铝===你好=====");
-        f=false;
+        f = false;
         this.notify();
     }
 
     synchronized void gitl(int i) {
-
         //如果帅哥回答了 就等带
-        while (f){
+        while (f) {
             try {
                 System.out.println("======偶遇帅哥========");
                 this.wait();
@@ -65,8 +62,7 @@ class Sweethearts {
             }
         }
         System.out.println("======偶遇帅哥====先说话====");
-        f=true;
+        f = true;
         this.notify();
     }
-
 }

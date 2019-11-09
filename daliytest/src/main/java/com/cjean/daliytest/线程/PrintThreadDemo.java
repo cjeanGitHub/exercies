@@ -14,21 +14,18 @@ public class PrintThreadDemo {
     static boolean f = false;
 
     private static ExecutorService es = Executors.newFixedThreadPool(100);
+
     public static void main(String[] args) throws InterruptedException {
-
-    }
-
-    public synchronized void test(){
         String str1 = "abcdef";
         String str2 = "123456";
 
         final Object lock = new Object();
-        t1 = new Thread(()->{
+        t1 = new Thread(() -> {
             for (int i = 0; i < str1.length(); i++) {
                 synchronized (lock) {
                     try {
 //                        lock.notify();
-                        if (f)  lock.wait();
+                        if (f) lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -37,13 +34,13 @@ public class PrintThreadDemo {
                     lock.notify();
                 }
             }
-        },"t1");
+        }, "t1");
 
-        t2 = new Thread(()->{
+        t2 = new Thread(() -> {
             for (int i = 0; i < str2.length(); i++) {
                 synchronized (lock) {
                     try {
-                        if (!f)  lock.wait();
+                        if (!f) lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -52,7 +49,7 @@ public class PrintThreadDemo {
                     lock.notify();
                 }
             }
-        },"t2");
+        }, "t2");
 
         t2.start();
         t1.start();
