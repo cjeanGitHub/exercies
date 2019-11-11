@@ -14,6 +14,8 @@ import java.lang.reflect.Method;
 public class ParamTranClient {
 
     public static void main(String[] args) {
+
+
         ParamTranClient p = new ParamTranClient();
 //        getReflect();
         // 反射解决  基本类型 改变值的情况

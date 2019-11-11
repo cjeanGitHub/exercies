@@ -1,6 +1,7 @@
 package com.cjean.daliytest.线程;
 
 import java.util.concurrent.*;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -61,7 +62,6 @@ public class SorftThreadDemo2 {
 
 
     public static void main(String[] args) {
-
         ThreadSemaphoreDemo();
 
 //使用 CyclicBarrier (回环栅栏)实现线程按顺序执行
