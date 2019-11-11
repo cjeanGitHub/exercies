@@ -17,7 +17,7 @@ public class Account {
 //        balance += money;
 //    }
 
-    public synchronized void deposi(double money){
+    public void deposi(double money){
         synchronized ("1"){//锁住代码块  锁住具体执行业务的代码块 实现 多线程功能的加锁
             balance += money;
         }
