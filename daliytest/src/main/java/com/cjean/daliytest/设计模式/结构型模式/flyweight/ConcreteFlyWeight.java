@@ -11,7 +11,6 @@ public class ConcreteFlyWeight {
 	 * @param color
 	 */
 	public ConcreteFlyWeight(String color) {
-		super();
 		this.color = color;
 	}
 	public String getColor() {

@@ -22,8 +22,8 @@ public class SingletonDemo04 implements Serializable{
 	private SingletonDemo04() {
 		
 	}
-	
-	public static class SingletonDemo04Instance{
+
+	private static class SingletonDemo04Instance{
 		// 由于是单例   常驻static 一个变量
 		private static SingletonDemo04 instance = new SingletonDemo04();
 	}

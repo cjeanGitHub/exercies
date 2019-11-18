@@ -22,7 +22,9 @@ public class SingletonDemo03 implements Serializable{
 	private static SingletonDemo03 instance;
 
 	private SingletonDemo03() {
-		
+//		if (null != instance){
+//			throw new RuntimeException();
+//		}
 	}
 	
 	// 线程安全  但是导致  效率性能降低
@@ -30,7 +32,7 @@ public class SingletonDemo03 implements Serializable{
 		if(null != instance) {
 			return instance;
 		}else {
-			synchronized (SingletonDemo04.class) {
+			synchronized (SingletonDemo03.class) {
 				instance = new SingletonDemo03();
 				return instance;
 			}

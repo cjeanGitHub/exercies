@@ -19,6 +19,8 @@ public class 装饰器模式Demo {
 		System.err.println(milk.info()+"=="+milk.cost());
 		Drink suger = new Suger(coffee);
 		System.err.println(suger.info()+"=="+suger.cost());
+		Drink milk_suger = new Suger(milk);
+		System.err.println(milk_suger.info()+"=="+milk_suger.cost());
 	}
 }
 //抽象组件

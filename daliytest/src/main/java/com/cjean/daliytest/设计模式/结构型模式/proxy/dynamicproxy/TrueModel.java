@@ -14,7 +14,6 @@ public class TrueModel implements ProxyInter{
 
 	@Override
 	public String Up(String mes) {
-		// TODO Auto-generated method stub
 		System.out.println("TrueModel  Up()");
 		return mes.toUpperCase();
 	}

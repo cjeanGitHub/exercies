@@ -16,11 +16,11 @@ public class Client {
 		/**
 		 * 第二种
 		 */
-//		dynamicProxy02();
+		dynamicProxy02();
 		/**
 		 * 第1种
 		 */
-		dynamicProxy01();
+//		dynamicProxy01();
 	}
 	
 	static void dynamicProxy02() {
@@ -40,7 +40,7 @@ public class Client {
 						Object re = null;
 						Object mes = method.invoke(trueModel, args);
 						if(null != mes && !"".equals(mes)) {
-							System.out.println(":if:");
+//							System.out.println(":if:");
 							re = mes;
 						}
 						return re;

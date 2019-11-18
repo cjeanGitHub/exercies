@@ -12,7 +12,7 @@ public class Test {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) throws Exception {
 		// 枚举式
-//		test04();
+		test04();
 		System.out.println("*******4********");
 		
 		//测试单例--静态内部类
@@ -22,7 +22,7 @@ public class Test {
 //			test02();
 			System.out.println("*******2********");
 		//测试单例--饿汉式
-			test01();
+//			test01();
 			System.out.println("*******1********");
 	}
 	// 枚举式

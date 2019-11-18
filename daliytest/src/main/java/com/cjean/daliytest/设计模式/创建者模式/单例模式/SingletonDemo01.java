@@ -13,9 +13,6 @@ import java.io.Serializable;
 //implements Serializable  
 public class SingletonDemo01{
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -2857572878017706543L;
 	// 由于是单例模式  
 	private static SingletonDemo01 instance = new SingletonDemo01();
