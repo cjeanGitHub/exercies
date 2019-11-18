@@ -5,16 +5,17 @@
 	<display-name>mvc</display-name>
 
 	<servlet>
-		<servlet-name>frontController</servlet-name>
+		<servlet-name>frontController</servlet-name><!-- 前段控制器，DispatcherServlet的配置 -->
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
-			<param-name>contextConfigLocation</param-name>
+			<param-name>contextConfigLocation</param-name><!-- 视图解析器的初始化 -->
 			<param-value>classpath:spring/spring-mvc-configs.xml</param-value>
 		</init-param>
+		<!-- 数字越小 越先加载  1，代表跟随系统加载而加载 -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-	<servlet-mapping>
+	<servlet-mapping><!-- 对url进行解析，比如这个，所有的请求客户端url末尾都得加...do 比如：http://localhost:8080/mvc/admin/mvc.do -->
 		<servlet-name>frontController</servlet-name>
 		<url-pattern>*.do</url-pattern>
 	</servlet-mapping>
