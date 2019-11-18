@@ -9,3 +9,6 @@ http://localhost:8080/mvc/str/hello1.do
     
 http://localhost:8080/mvc/admin/say.do
     say.jsp--->Title11222115514sofnao
+    
+ http://localhost:8080/mvc/admin/mvc.do
+    hello.jsp-->
