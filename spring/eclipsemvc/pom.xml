@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.cjean.eclipse.spring</groupId>
+  <artifactId>eclipsemvc</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>eclipsemvc Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+  
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+    </dependency>
+    
+     <!-- 注意：这是没关系，只是因为JSP需要servlet的Jar包 我们选择最后那个pom.xml，双击打开，然后加入servlet 3.1的依赖坐标保存即可 -->
+    <dependency>
+      <groupId>javax.servlet</groupId><!-- jsp 报错解决方案 -->
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency>
+      <groupId>org.springframework</groupId>  <!-- jar -->
+      <artifactId>spring-webmvc</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+    <!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-jdbc</artifactId>
+        <version>4.3.11.RELEASE</version> </dependency> -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-aop</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>4.3.11.RELEASE</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+    <!-- <dependency>
+        <groupId>commons-fileupload</groupId>  文件下载 jar
+        <artifactId>commons-fileupload</artifactId>
+        <version>1.4</version>
+    </dependency>
+
+    <dependency>
+        <groupId>commons-io</groupId>   常用io jar
+        <artifactId>commons-io</artifactId>
+        <version>2.6</version>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet.jsp</groupId>  项目支持 jsp，引入jsp引擎 jar
+        <artifactId>jsp-api</artifactId>
+        <version>2.2</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>commons-fileupload</groupId>  文件下载 jar
+        <artifactId>commons-fileupload</artifactId>
+        <version>1.4</version>
+    </dependency>
+
+    <dependency>
+        <groupId>com.alibaba</groupId>  对象转换 jar
+        <artifactId>fastjson</artifactId>
+        <version>1.2.59</version>
+    </dependency>
+
+    <dependency>
+        <groupId>javax.servlet.jsp</groupId>
+        <artifactId>javax.servlet.jsp-api</artifactId>
+        <version>2.3.1</version>
+    </dependency> -->
+  
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>eclipsemvc</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+    </plugins>
+  </build>
+</project>
