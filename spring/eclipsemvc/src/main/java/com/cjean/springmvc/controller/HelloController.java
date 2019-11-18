@@ -16,12 +16,12 @@ public class HelloController {
 
 		modelAndView.addObject("msg2", "褚栋梁的springmvc测试");
 
-		modelAndView.setViewName("hello");
+		modelAndView.setViewName("hello");//hello。jsp
 		return modelAndView;
 	}
 
 	@RequestMapping("/say")
 	public String getJsp() {
-		return "say";
+		return "say";//say。jsp
 	}
 }
