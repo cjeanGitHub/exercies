@@ -49,11 +49,12 @@ public class TestLock {
                     //抢锁
                     myWatchLock.tryLock();
                     System.out.println("干活....");
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    // 由于太快了 会造成死锁
+//                    try {
+//                        Thread.sleep(2000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
 
                     //释放锁
                     myWatchLock.unLock();

@@ -110,7 +110,16 @@ public class MyWatchLock implements Watcher, AsyncCallback.StringCallback, Async
 
             if (0 == i){// 如果 这个节点是第一个就释放锁
                 System.out.println(pathName+"：节点是第一个干活的.childer call back..");
-                cc.countDown();
+                try {
+                    // 由于太快了 会造成死锁 前面的 Thread.sleep(2000); 就 是为了别让他太快
+                    zk.setData("/",threadName.getBytes(),-1);
+                    cc.countDown();
+                } catch (KeeperException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
             }else {// 如果不是第一个就检查前一个还在不在
                 zk.exists("/"+children.get(i-1),this,this,"exists");
             }
