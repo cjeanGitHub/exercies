@@ -11,6 +11,7 @@ public class MybatiesGeneratorApplicationTests {
 
     @Test
     public void contextLoads() {
+    	System.out.println("sfasf");
     }
 
 }
