@@ -20,7 +20,7 @@ class Race implements Runnable{
 				System.out.println(winner);
 				break;
 			}else {
-				System.out.println(Thread.currentThread().getName()+"-->"+step);
+				System.out.println(Thread.currentThread().getName()+"->"+step);
 			}
 			boolean resultFlage = getWinner(step);
 		}
@@ -28,7 +28,7 @@ class Race implements Runnable{
 	
 	public boolean getWinner(int step) {
 		if(100 == step) {
-			winner = Thread.currentThread().getName()+"-resultFlage-winner-->"+step;
+			winner = Thread.currentThread().getName()+"-resultFlage is winner-->"+step;
 			return true;
 		}else {
 			return false;

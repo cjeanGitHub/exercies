@@ -1,0 +1,73 @@
+/**
+ * Copyright (C), 2015-2019, XXX有限公司
+ * FileName: TestJvm_0001
+ * Author:   14172
+ * Date:     2019/12/5 16:14
+ * History:
+ * <author>          <time>          <version>          <desc>
+ * 作者姓名           修改时间           版本号              描述
+ */
+package com.cjean.daliytest.jvm;
+
+/**
+ * @author 14172
+ * @create 2019/12/5
+ * @since 1.0.0
+ */
+public class TestJvm_0001 {
+
+
+
+    /**
+     一个空的没有任何内容的java文件在编译后会增加这个类的空的构造器
+     public TestJvm_0001() {
+     }
+     u1 1个字节  u2 2个字节 u3 3个字节， u8 8个字节
+      class 构成：
+     class{
+        u4 magic;
+        u2 minor version;
+        u2 major version;
+        u2 constant_pool_count;
+        u2 constant_pool_info constant_pool[ constant_pool_count - 1 ]
+
+
+     }
+
+     这个类的16进制字节码文件：
+     cafe babe 0000 0034 0010 0a00 0300 0d07
+     /--------
+     cafe babe(cafe babe -> magicNumber )
+     0000(minor version 文件版本)  0034 (major version 编译器版本 0034-52 jdk8  00353-51 jdk7)
+     0010（constant-pool-count 常量池常量数量：长度为 constant-pool-count-1《0010->16 :16-1=15个》）
+
+     0a00 0300 0d07
+     -------/
+
+     000e 0700 0f01 0006 3c69 6e69 743e 0100
+     0328 2956 0100 0443 6f64 6501 000f 4c69
+     6e65 4e75 6d62 6572 5461 626c 6501 0012
+     4c6f 6361 6c56 6172 6961 626c 6554 6162
+     6c65 0100 0474 6869 7301 0026 4c63 6f6d
+     2f63 6a65 616e 2f64 616c 6979 7465 7374
+     2f6a 766d 2f54 6573 744a 766d 5f30 3030
+     313b 0100 0a53 6f75 7263 6546 696c 6501
+     0011 5465 7374 4a76 6d5f 3030 3031 2e6a
+     6176 610c 0004 0005 0100 2463 6f6d 2f63
+     6a65 616e 2f64 616c 6979 7465 7374 2f6a
+     766d 2f54 6573 744a 766d 5f30 3030 3101
+     0010 6a61 7661 2f6c 616e 672f 4f62 6a65
+     6374 0021 0002 0003 0000 0000 0001 0001
+     0004 0005 0001 0006 0000 002f 0001 0001
+     0000 0005 2ab7 0001 b100 0000 0200 0700
+     0000 0600 0100 0000 1100 0800 0000 0c00
+     0100 0000 0500 0900 0a00 0000 0100 0b00
+     0000 0200 0c
+
+
+
+
+
+     */
+
+}
