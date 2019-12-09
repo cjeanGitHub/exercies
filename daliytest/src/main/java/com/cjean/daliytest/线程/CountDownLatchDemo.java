@@ -51,7 +51,7 @@ public class CountDownLatchDemo {
         ).start();
 
         System.out.println("等待 2 个子线程执行完毕...");
-        latch.await();
+        latch.await();// 线程数没有countdown 0 ，我得把线程们拦住
         System.out.println("2 个子线程已经执行完毕");
         System.out.println("继续执行主线程");
     }
