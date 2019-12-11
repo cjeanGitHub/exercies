@@ -35,7 +35,6 @@ public class MyCGLBProxy implements MethodInterceptor{
 	public Object MyCGLB() {
 		//增强器
 		Enhancer enhancer = new Enhancer();
-//		Enhancer enhancer = new Enhancer();
 		//指定父类 即目标量  开始增强父类
 		enhancer.setSuperclass(DoSome.class);
 //		enhancer.setSuperclass(IDoSome.class);
