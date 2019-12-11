@@ -13,7 +13,7 @@ public class test{
 		String re = ser.doFirst();
 		System.out.println("-->"+re);
 		// 基于CGLB的动态代理
-		DoSome cglbSer = new MyCGLBProxy(ser).MyCGLB();
+		DoSome cglbSer = (DoSome)new MyCGLBProxy(ser).MyCGLB();
 		
 		String mes = cglbSer.doFirst();
 		System.out.println(mes);

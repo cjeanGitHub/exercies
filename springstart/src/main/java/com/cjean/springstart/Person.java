@@ -8,6 +8,8 @@ package com.cjean.springstart; /**
  * 作者姓名           修改时间           版本号              描述
  */
 
+import java.io.File;
+import java.io.FileFilter;
 import java.io.Serializable;
 
 /**
@@ -15,7 +17,7 @@ import java.io.Serializable;
  * @create 2019/12/11
  * @since 1.0.0
  */
-public class Person implements Serializable {
+public class Person implements Serializable, FileFilter {
 
     private String name;
     private int age;
@@ -57,5 +59,10 @@ public class Person implements Serializable {
 
     public void setFood(Food food) {
         this.food = food;
+    }
+
+    @Override
+    public boolean accept(File pathname) {
+        return false;
     }
 }

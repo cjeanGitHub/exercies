@@ -32,15 +32,17 @@ public class MyCGLBProxy implements MethodInterceptor{
 		
 	}
 	//增强父类
-	public DoSome MyCGLB() {
+	public Object MyCGLB() {
+		//增强器
 		Enhancer enhancer = new Enhancer();
+//		Enhancer enhancer = new Enhancer();
 		//指定父类 即目标量  开始增强父类
 		enhancer.setSuperclass(DoSome.class);
 //		enhancer.setSuperclass(IDoSome.class);
 		//指定会掉函数
 		enhancer.setCallback(this);
 		
-		return (DoSome)enhancer.create();
+		return enhancer.create();
 //		return (IDoSome)enhancer.create();
 		
 	}
@@ -51,9 +53,11 @@ public class MyCGLBProxy implements MethodInterceptor{
 			, Object[] obj
 			, MethodProxy methodProxy) throws Throwable {
 		Object invoke = method.invoke(target, obj);
+		System.out.println("qian");
 		if (null != invoke) {
 			((String)invoke).toUpperCase();
 		}
+		System.out.println("hou");
 		return invoke;
 	}
 	
