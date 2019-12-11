@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+		<import resource="applicationContext-*.xml"/>
+	<!-- 注入方式之 构造器注入 constructor-arg -->
+        <bean id="person" class="com.cjean.springstart.Person">
+        	<constructor-arg name="name" value="maxiaosan"></constructor-arg>
+        	<constructor-arg name="age" value="18"></constructor-arg>
+			<property name="food" ref="food"></property>
+
+
+			<!-- 注入方式之 静态工厂 注入 步骤2-->
+			<!--<property name="food" ref="staticfood"></property>-->
+			<property name="car" ref="car2"></property>
+         </bean>
+	<!-- 注入方式之 get/set 注入-->
+	<bean id="food" class="com.cjean.springstart.Food">
+		<property name="apple" value="红富士"></property>
+		<property name="banana" value="大黄蜂"></property>
+	</bean>
+
+	<!-- 注入方式之 静态工厂 注入 步骤1-->
+	<bean id="staticfood" class="com.cjean.springstart.Food" factory-method="getFoodByStaticFactory"></bean>
+
+	<!-- 注入方式之 实例工厂 注入-->
+	<bean id="car1" class="com.cjean.springstart.Car"></bean>
+	<bean id="car2" factory-bean="car1" factory-method="getCar"></bean>
+
+        
+</beans>

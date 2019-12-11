@@ -1,4 +1,4 @@
-package com.cjean.daliytest.线程;
+package com.cjean.daliytest.线程.threadlocal;
 
 /**
  * @ClassName:ThreadApple

@@ -1,6 +1,6 @@
 package com.cjean.daliytest.reflect;
 
-import com.cjean.daliytest.线程.ThreadLocalApple;
+import com.cjean.daliytest.线程.threadlocal.ThreadLocalApple;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 
 public class RefectDemo {
     public static void main(String[] args) throws Exception {
-        Class clazz = Class.forName("com.cjean.daliytest.线程.ThreadLocalApple"); // 第 3 种
+        Class clazz = Class.forName("com.cjean.daliytest.线程.threadlocal.ThreadLocalApple"); // 第 3 种
         ThreadLocalApple threadLocalApple = (ThreadLocalApple) clazz.newInstance();
 
         Constructor[] declaredConstructors = clazz.getDeclaredConstructors();
@@ -52,7 +52,7 @@ public class RefectDemo {
 //        Class tClass = t1.getClass();//  第一种
 
         //  Class tClass = ThreadLocalApple.class;//  第 2 种
-        Class clazz = Class.forName("com.cjean.daliytest.线程.ThreadLocalApple"); // 第 3 种
+        Class clazz = Class.forName("com.cjean.daliytest.线程.threadlocal.ThreadLocalApple"); // 第 3 种
         ThreadLocalApple threadLocalApple = (ThreadLocalApple) clazz.newInstance();
 
         // fiedl 获取 class 文件的 公开 属性

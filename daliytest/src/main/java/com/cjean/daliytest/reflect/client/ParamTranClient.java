@@ -1,7 +1,8 @@
 package com.cjean.daliytest.reflect.client;
 
 import java.lang.reflect.Field;
-import java.lang.reflect.Method;
+import java.util.concurrent.Exchanger;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 题目意思  自定义 int 2个变量，打印输出变量的值；通过一个方法实现变量值更改的目的
@@ -12,6 +13,9 @@ import java.lang.reflect.Method;
  */
 
 public class ParamTranClient {
+
+
+    static Exchanger exchanger = new Exchanger();
 
     public static void main(String[] args) {
 
@@ -27,10 +31,24 @@ public class ParamTranClient {
         System.out.println("a:" + a + ",B：" + b);
         System.out.println("==============");
 
-        test(c,d);
-        a = c;
-        b = d;
+//        test(c,d);
+
+        AtomicInteger a1 = new AtomicInteger();
+        AtomicInteger b1 = new AtomicInteger();
+        testChangeIntBySyn(a,b,a1,b1);
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        a = a1.get();
+        b = b1.get();
         System.out.println("a:" + a + ",B：" + b);
+
+//        test(c,d);
+//        a = c;
+//        b = d;
+//        System.out.println("a:" + a + ",B：" + b);
 //
         //通过异或运算符达到数字交换的目的
 //        System.out.println("a:" + a + ",B：" + b);
@@ -57,6 +75,40 @@ public class ParamTranClient {
 //        System.out.println("a1:" + a + ",b1：" + b1);
 
     }
+
+    /**
+     * 交换int
+     *通过 exchanger.exchange 方法实现内部对对象的交换赋值
+     */
+    public static void testChangeIntBySyn(int finalA,int finalB, AtomicInteger a1, AtomicInteger b1) {
+        new Thread(()->{
+            String aStr = ""+ finalA;
+            try {
+                aStr = (String) exchanger.exchange(aStr);
+                a1.set(Integer.parseInt(aStr));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        },"T1").start();
+        new Thread(()->{
+            String bStr = ""+ finalB;
+            try {
+                bStr = (String) exchanger.exchange(bStr);
+                b1.set(Integer.parseInt(bStr));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        },"T2").start();
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
     /**
      * 交换int---by木木DR
      *

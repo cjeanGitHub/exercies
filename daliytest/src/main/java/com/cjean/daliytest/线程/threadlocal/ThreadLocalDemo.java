@@ -1,4 +1,4 @@
-package com.cjean.daliytest.线程;
+package com.cjean.daliytest.线程.threadlocal;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit;
 public class ThreadLocalDemo {
 
     public static void main(String[] args) throws Exception {
-        threadLoclDem3();
+//        threadLoclDem3();
 
-//        threadLoclDemo2();
+            threadLoclDemo2();
 //        threadLoclDemo1();
 
     }
@@ -74,12 +74,9 @@ public class ThreadLocalDemo {
      */
     public static void threadLoclDemo2() throws InterruptedException {
         ThreadLocalApple threadLocalApple = new ThreadLocalApple();//实例化一个 线程内的标志对象
-
         //创建 线程 对实例对象进行标志（即将标志对象放置在多线程空间中
-
         class AppRunn implements Runnable {
             final int threadId;
-
             public AppRunn(int threadId) {
                 this.threadId = threadId;
             }
