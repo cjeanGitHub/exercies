@@ -9,6 +9,9 @@
  */
 package com.cjean.daliytest.annotation;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * @author 14172
  * @create 2019/12/16
@@ -16,7 +19,14 @@ package com.cjean.daliytest.annotation;
  */
 public class AppleTest {
     public static void main(String[] args) {
-        FruitUntil.getFruitInfo(Apple.class);
-        FruitUntil.getFruitInfo(Apple2.class);
+//        FruitUntil.getFruitInfo(Apple.class);
+//        FruitUntil.getFruitInfo(Apple2.class);
+
+//        ArrayList<String> arrayList = new ArrayList<>();
+//        arrayList.set(0,"a");
+//        arrayList.get(0);
+
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(0,"a");
     }
 }
